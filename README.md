@@ -11,6 +11,10 @@ Where exactly does this fit in with the rest of the stack?
 
 [CIDs](https://github.com/pynchmeister/cid) could be part of the block metadata? 
 
+The [IPFS DAG API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/DAG.md) may be of use for something beyond the scope of this...
+
+The IPFS Files API is designed for videos, et al. which suits our use case for "lesson" artifacts storage.
+
 ### Resources
 
 * https://proto.school/basics
