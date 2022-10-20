@@ -1,6 +1,8 @@
 # celestia-data-storage
 Integrating Celestia with a Long-term Data Storage Provider (IPFS, Filecoin, etc.)
 
+I will be applying this to ARweave as well but figured it may easier to prototype with IPFS/Filecoin first...this does not account for non-permanence though...
+
 Can prototype with Rollmint but should be merged with core ultimately.
 
 ## Instructions
