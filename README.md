@@ -13,6 +13,7 @@ Where exactly does this fit in with the rest of the stack?
 
 * https://proto.school/basics
 * https://github.com/pynchmeister/smartweave-custom-hashing/tree/dev/smartweave-custom-hasing/warp/custom-hashing
+* https://github.com/The-Arbiter/Hash-Storage-Example/blob/main/src/HashStore.sol
 
 ### Notes 
 
