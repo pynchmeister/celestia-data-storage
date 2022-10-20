@@ -15,6 +15,10 @@ The [IPFS DAG API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/DAG
 
 The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md) is designed for videos, et al. which suits our use-case for "lesson" artifacts storage.
 
+[This document](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md) is relevant in that it describes the usage of js ipfs in the browser...
+
+
+
 ### Resources
 
 * https://proto.school/basics
