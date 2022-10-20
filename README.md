@@ -1,6 +1,8 @@
 # celestia-data-storage
 Integrating Celestia with a Long-term Data Storage Provider (IPFS, Filecoin, etc.)
 
+Can prototype with Rollmint but should be merged with core ultimately.
+
 ## Instructions
 
 Will need to clone either [Rollmint](https://github.com/celestiaorg/rollmint) or [celestia core](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs)
