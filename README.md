@@ -21,6 +21,9 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 * https://github.com/pynchmeister/smartweave-custom-hashing/tree/dev/smartweave-custom-hasing/warp/custom-hashing
 * https://github.com/The-Arbiter/Hash-Storage-Example/blob/main/src/HashStore.sol
 
+* https://developer.mozilla.org/en-US/docs/Web/API/File
+* 
+
 ### Notes 
 
 Can most likely add the CID here: https://github.com/celestiaorg/rollmint/blob/cb5c7440a8e879778e71097e254c3dd692c39d14/types/block.go#L58
