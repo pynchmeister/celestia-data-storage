@@ -7,6 +7,8 @@ Can prototype with Rollmint but should be merged with core ultimately.
 
 ## Instructions
 
+(*change these links to the org*)
+
 Will need to clone either [Rollmint](https://github.com/celestiaorg/rollmint) or [celestia core](https://github.com/celestiaorg/celestia-core/tree/v0.34.x-celestia/docs)
 
 Where exactly does this fit in with the rest of the stack? 
