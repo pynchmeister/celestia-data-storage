@@ -77,16 +77,18 @@ The contents of the files directory will be at the top level, instead of the fil
 <details>
 <summary>onRootCidReady</summary>
 <br>
-This is how you dropdown.
+Function. Because the data is formatted for IPFS and Filecoin on the client, the root CID for the data is generated before the data is uploaded to web3.storage. If you want to display the CID to the user before the upload is complete, pass in an onRootCidReady function that accepts a CID string:
+
+<img width="714" alt="Screen Shot 2022-11-01 at 5 46 10 PM" src="https://user-images.githubusercontent.com/33232379/199347775-3f1f4477-6c8e-4ebb-b7f1-9c132fc1c0b4.png">
 </details>
 
 <details>
 <summary>onStoredChunk</summary>
 <br>
-This is how you dropdown.
+Function. You can also display progress updates by passing in an onStoredChunk callback. This is called after each chunk of data is uploaded, with the size of the chunk in bytes passed in as a parameter:
+
+<img width="970" alt="Screen Shot 2022-11-01 at 5 47 37 PM" src="https://user-images.githubusercontent.com/33232379/199347969-ab0c370e-94b2-4feb-bf36-1fd935c08921.png">
 </details>
-
-
 
 ## Retrieve Files
 
@@ -105,5 +107,51 @@ for (const file of files) {
   console.log(`${file.cid} ${file.name} ${file.size}`);
 }
 ```
+
+#### Return value
+
+Returns ```undefined``` if there are no matches for the given CID.
+
+If found, the method returns a Web3Response object, which extends the [Fetch API response object](https://developer.mozilla.org/en-US/docs/Web/API/Response) to add two iterator methods unique to the web3.storage client library:
+```files()``` and ```unixFsIterator()```
+
+<details>
+<summary>Using File objects</summary>
+<br>
+Calling the files() method returns your requested files as an Array<Web3File> object, which is an iterable collection of Web3File objects. Each object represents a file that was uploaded in the CAR with the supplied CID.
+
+The Web3File type extends [the generic JavaScript File type](https://developer.mozilla.org/en-US/docs/Web/API/File), adding a string property for the CID of the given file named cid, as shown in the example below. This is different from the CID of the CAR that contains the file, which you specified when calling get().
+
+<img width="487" alt="Screen Shot 2022-11-01 at 5 56 48 PM" src="https://user-images.githubusercontent.com/33232379/199349586-8df21c3b-fbc0-48a5-bf39-3af2b6c21183.png">
+
+</details>
+
+
+
+<details>
+<summary>Using UnixFS objects</summary>
+<br>
+In addition to the files() method, you can also use the unixFsIterator() method. This returns your requested files as a AsyncIterable<UnixFS> object, which is an iterable collection of [UnixFS](https://github.com/ipfs/js-ipfs-unixfs/blob/master/packages/ipfs-unixfs/README.md) objects. Each object represents a file that was uploaded in the CAR with the supplied CID.
+
+Using unixFS is helpful in cases where you expect large responses or responses containing many files, since it does not buffer all files in memory before returning. Instead, the returned async iterator yields an object for each entry.
+
+<img width="842" alt="Screen Shot 2022-11-01 at 6 00 08 PM" src="https://user-images.githubusercontent.com/33232379/199350039-cd70c9b7-d8e3-4226-b029-e624b9a1bc6c.png">
+
+Note that not all UnixFS entries returned by the iterator represent files. If entry.type == 'directory', the entry represents a directory and contains no data itself; it just links to other entries.
+
+For more details on UnixFS objects, see [the README file in the UnixFS GitHub repository](https://github.com/ipfs/js-ipfs-unixfs/blob/master/packages/ipfs-unixfs/README.md).
+
+<img width="617" alt="Screen Shot 2022-11-01 at 6 01 04 PM" src="https://user-images.githubusercontent.com/33232379/199350182-68105921-7620-4ea7-8f6d-d15f655e2f6d.png">
+
+</details>
+
+
+
+### Check Status
+
+Lorem ipsum
+
+
+
 
 
