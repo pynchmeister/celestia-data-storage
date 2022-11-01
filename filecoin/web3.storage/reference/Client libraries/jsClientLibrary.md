@@ -8,6 +8,8 @@ Store files using the ```put()``` method.
 
 ### Examples
 
+https://github.com/pynchmeister/celestia-data-storage/tree/main/filecoin/web3.storage/reference/Client%20libraries
+
 
 #### Return value
 
