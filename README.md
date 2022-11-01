@@ -32,6 +32,8 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 * https://developer.mozilla.org/en-US/docs/Web/API/File
 * 
 
-### Notes 
+### Notes / Open Questions
+
+How do CIDs map to Filecoin's Piece-Inclusion proof?
 
 
