@@ -37,7 +37,9 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 
 ### Notes / Open Questions
 
-How do CIDs map to Filecoin's Piece-Inclusion proof?
+* How do CIDs map to Filecoin's Piece-Inclusion proof?
+
+* How does the CID relate to the smart contract (solidity atm) infrastructure ?
 
 ### TODO
 
