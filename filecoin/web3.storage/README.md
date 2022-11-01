@@ -2,7 +2,11 @@
 ## Notes / Open Questions
 
 * is using a service such as web3.storage the equivalent of running a "light client" (with the following in mind: ```Filecoin does not use the “full node” or “light client” terminology, in wide use in Bitcoin and other blockchain networks.```)
+* How to prove data was posted...verify via [Piece-Inclusion-Proof](https://porcuquine.github.io/specs/docs/proofs/)
+* Find the aforementioned Piece Inclusion Proof [here](https://github.com/filecoin-project/rust-fil-proofs), should be somewhere in here: https://github.com/filecoin-project/rust-fil-proofs/tree/master/storage-proofs-porep 
 
+
+<img width="670" alt="Screen Shot 2022-11-01 at 12 51 20 PM" src="https://user-images.githubusercontent.com/33232379/199290446-5308bc7c-570f-437f-b6a5-334273401aa5.png">
 
 
 ### Resources / Links
