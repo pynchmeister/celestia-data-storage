@@ -326,6 +326,8 @@ Number. You can specify how many times putCar should attempt to retry in case of
 
 <img width="501" alt="Screen Shot 2022-11-01 at 6 57 53 PM" src="https://user-images.githubusercontent.com/33232379/199357597-1c8cdda7-63cf-4672-a8ff-894af7db6f61.png">
 
+</details>
+  
 <details>
 <summary>onStoredChunk</summary>
 <br>
@@ -341,41 +343,7 @@ Function. You can also display progress updates by passing in an onStoredChunk c
 <br>
 [BlockDecoder](https://github.com/multiformats/js-multiformats#ipld-codecs-multicodec). Used to specify additional IPLD block decoders which interpret the data in the CAR file and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: dag-pb, dag-cbor and raw.
 
+<img width="796" alt="Screen Shot 2022-11-01 at 7 02 22 PM" src="https://user-images.githubusercontent.com/33232379/199358492-02f5d854-ca55-4610-bad6-8590d8b9c081.png">
+    
 </details>
-```
-  import { Web3Storage } from 'web3.storage'
-import { CarReader, CarWriter } from '@ipld/car'
-import { encode } from 'multiformats/block'
-import * as json from '@ipld/dag-json'
-import { sha256 } from 'multiformats/hashes/sha2'
 
-async function storeDagJSON (jsonObject) {
-  // encode the json object into an IPLD block
-  const block = await encode({ value: jsonObject, codec: json, hasher: sha256 })
-
-  // create a new CarWriter, with the encoded block as the root
-  const { writer, out } = CarWriter.create([block.cid])
-
-  // add the block to the CAR and close it
-  writer.put(block)
-  writer.close()
-
-  // create a new CarReader we can hand to web3.storage.putCar
-  const reader = await CarReader.fromIterable(out)
-
-  // upload to web3.storage using putCar
-  console.log('uploading car.')
-  const client = new Web3Storage({ token: process.env.WEB3STORAGE_TOKEN })
-  const cid = await client.putCar(reader, {
-    name: 'putCar using dag-json',
-
-    // include the dag-json codec in the decoders field
-    decoders: [json]
-  })
-  console.log('Stored dag-json data! CID:', cid)
-}
-
-storeDagJSON({
-  hello: 'world'
-})
-```
