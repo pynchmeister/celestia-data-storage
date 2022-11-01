@@ -25,3 +25,19 @@ async function storeFiles(path = 'path/to/somewhere') {
 ```
 Note that if you're using the client library you dont need to install the ```files-from-path``` package seperately. Instead, just import the ```getFilesFromPath``` or ```filesFromPath``` functions from the ```web3.storage``` package.
 
+## ipfs-car
+
+The web3.storage API works with Content Archive (CAR) files, which package up [content addressed data](https://web3.storage/docs/concepts/content-addressing/) into a simple format for storage and transport. Internally, the client library uses the [ipfs-car package](https://github.com/web3-storage/ipfs-car) to create CARs from regular files before sending data to the API.
+
+If you prefer to work with CARs directly, see the how-to guide on [working with Content Archives](https://web3.storage/docs/how-tos/work-with-car-files/) for usage information for ipfs-car and information about other options.
+
+## carbites
+
+The [carbites](https://github.com/pynchmeister/carbites) package includes a command line tool and Javascript API for splitting Content Archive (CAR) files into chunks. This is used to upload files that are larger than the 100mb size limit on the [upload HTTP endpoint](https://web3.storage/docs/reference/http-api/#operation/post-car)
+
+See the how-to guide on [working with Content Archives](https://web3.storage/docs/how-tos/work-with-car-files/) for more information on using the carbites tool.
+
+#### Miscellaneous Links
+
+* https://github.com/web3-storage/files-from-path
+* 
