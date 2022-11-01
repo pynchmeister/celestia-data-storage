@@ -8,13 +8,3 @@ You can monitor this activity for files you upload to web3.storage by calling st
 
 ```web3.storage combines the content addressing capabilities of IPFS and the proving algorithms and storage deal marketplace of Filecoin in order to achieve this complete solution, wrapping the power of these two systems into an easy-to-use service with simple, familiar methods such as put(), get(), and status(). Even better, web3.storage is free to use and integrate into your apps and services.```
 
-## Javascript client library
-
-To use the JavaScript client library for web3.storage, you must first [obtain a free API token](https://web3.storage/docs/how-tos/generate-api-token)
-
-The client library automatically packs your uploads into a content addressible archive (CAR) for uploading to the web3.storage service, which stores data as blocks prefixed with the content identifier (CID) derived from a cryptographic hash of the data. You can then use a file's CID to retrieve it.
-
-### Glossary
-
-* Content addressable archive (CAR) - lorem ipsom (TODO)
-
