@@ -24,7 +24,7 @@
 
 #### Glossary
 
-* Content Addressing - ```the technique of issuing each piece of data a content identifier (CID), which is a token derived directly from the file's contents using an algorithm that will always generate the same key for the same content.```
+* [Content Addressing](https://ipld.io/specs/transport/car/) - ```the technique of issuing each piece of data a content identifier (CID), which is a token derived directly from the file's contents using an algorithm that will always generate the same key for the same content.```
 * Proof-of-Replication - ```proves that a given storage provider is storing a unique copy of a client's original data.```
 * Proof-of-Spacetime - ```proves that the client's data is stored continuously over time.```
 * 
