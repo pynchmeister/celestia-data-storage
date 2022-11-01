@@ -145,11 +145,108 @@ For more details on UnixFS objects, see [the README file in the UnixFS GitHub re
 
 </details>
 
-
-
 ### Check Status
 
-Lorem ipsum
+Retrieve metadata about your file by using the status() method and supplying the CID of the file you are interested in. This metadata includes the creation date and file size, as well as details about how the network is storing your data. Using this information, you can identify peers on the IPFS (InterPlanetary File System) network that are pinning the data, and Filecoin storage providers that have accepted deals to store the data.
+
+#### Usage
+
+```<clientObject>.status(<CID>)```
+
+#### Examples
+
+<details>
+<summary>Call</summary>
+<br>
+Here's an example of a call to the status() method:
+
+<img width="676" alt="Screen Shot 2022-11-01 at 6 08 14 PM" src="https://user-images.githubusercontent.com/33232379/199351269-a866432f-4cfb-4f36-a7e4-b3e79e8f8ad1.png">
+<br>
+</details>
+
+<details>
+<summary>Response</summary>
+<br>
+Here's an example response from the status() method:
+
+<img width="753" alt="Screen Shot 2022-11-01 at 6 09 14 PM" src="https://user-images.githubusercontent.com/33232379/199351430-58368129-9aac-469e-b954-0f6230d20eec.png">
+<br>
+</details>
+
+#### Parameters
+
+<img width="483" alt="Screen Shot 2022-11-01 at 6 11 43 PM" src="https://user-images.githubusercontent.com/33232379/199351755-fe12ace6-038d-4b34-b97a-a6c83143dbc3.png">
+
+#### Return value
+
+Returns ```undefined``` if there are no matches for the given CID.
+
+If found, the ```status()``` method returns a ```{Status}``` object that contains the metadata for your object's storage deal on the web3.storage network, with the following properties:
+
+<details>
+<summary>cid</summary>
+<br>
+String. The cid property is the content identifier of the data for which you are retrieving status information.
+<br>
+</details>
+
+<details>
+<summary>dagSize</summary>
+<br>
+Number. The dagSize property is the total size, in bytes, of the [Merkle Directed Acyclic Graph (DAG)](https://docs.ipfs.io/concepts/merkle-dag/) containing the queried CID.
+<br>
+</details>
+
+<details>
+<summary>created</summary>
+<br>
+String. The created property gives the creation date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.
+
+
+<img width="789" alt="Screen Shot 2022-11-01 at 6 17 54 PM" src="https://user-images.githubusercontent.com/33232379/199352553-9c715dfe-4f52-4645-a9a6-4ea32df59556.png">
+<br>
+</details>
+
+<details>
+<summary>pins</summary>
+<br>
+Array. The pins property is an array of Pin objects. Each Pin object represents a specific [peer in the IPFS network](https://docs.libp2p.io/concepts/peer-id/), with the following structure:
+
+<img width="731" alt="Screen Shot 2022-11-01 at 6 19 37 PM" src="https://user-images.githubusercontent.com/33232379/199352761-e7291642-9d2b-4318-b508-7da905d5a2b9.png">
+<br>
+</details>
+
+<details>
+<summary>deals</summary>
+<br>
+Array. The deals property is an array of Deal objects. Each Deal object represents a specific [storage deal on the Filecoin network](https://docs.filecoin.io/about-filecoin/how-filecoin-works/#deals), for a specific [Piece](https://spec.filecoin.io/systems/filecoin_files/piece/) of data, with the following structure:
+
+<img width="701" alt="Screen Shot 2022-11-01 at 6 21 01 PM" src="https://user-images.githubusercontent.com/33232379/199352929-f9c650f4-fe27-4b32-b308-93bee998d0f0.png">
+<br>
+</details>
+
+### List uploads
+
+List previous uploads with the ```list()``` method.
+
+#### Usage 
+
+```<clientObject>.list({before, maxResults})```
+
+#### Example
+
+The following example stores return values from a call to ```list()``` into a JavaScript array:
+
+<img width="635" alt="Screen Shot 2022-11-01 at 6 23 32 PM" src="https://user-images.githubusercontent.com/33232379/199353261-c9d7fb4e-2b2a-4839-b04f-0ddb7448c8d4.png">
+
+#### Parameters
+
+The ```list()``` method accepts an ```{options}``` object with the following properties:
+
+...
+
+
+
 
 
 
