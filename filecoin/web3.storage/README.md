@@ -5,6 +5,8 @@
 * How to prove data was posted...verify via [Piece-Inclusion-Proof](https://porcuquine.github.io/specs/docs/proofs/)
 * Find the aforementioned Piece Inclusion Proof [here](https://github.com/filecoin-project/rust-fil-proofs), should be somewhere in here: https://github.com/filecoin-project/rust-fil-proofs/tree/master/storage-proofs-porep 
 
+...here (?) https://github.com/filecoin-project/rust-fil-proofs/blob/4ff161d97728fa7ba6e12d519a4c0ce0c1b08096/storage-proofs-porep/src/stacked/circuit/params.rs#L41 
+
 
 <img width="670" alt="Screen Shot 2022-11-01 at 12 51 20 PM" src="https://user-images.githubusercontent.com/33232379/199290446-5308bc7c-570f-437f-b6a5-334273401aa5.png">
 
