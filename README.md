@@ -15,14 +15,15 @@ Where exactly does this fit in with the rest of the stack?
 
 [CIDs](https://github.com/pynchmeister/cid) could be part of the block metadata? 
 
+Use [this](https://github.com/DED-EDU/ephemeral-cluster) to test MVP smart contract suite with Ethereum (EVM) as execution layer (Solidity smart contracts)...
+
+Everything below this line of this section is tangential but a bit out of scope...
+
 The [IPFS DAG API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/DAG.md) may be of use for something beyond the scope of this...
 
 The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md) is designed for videos, et al. which suits our use-case for "lesson" artifacts storage.
 
 [This document](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md) is relevant in that it describes the usage of js ipfs in the browser...
-
-Use [this](https://github.com/DED-EDU/ephemeral-cluster) to test MVP smart contract suite with Ethereum (EVM) as execution layer (Solidity smart contracts)...
-
 
 ### Resources
 
