@@ -334,14 +334,14 @@ Number. You can specify how many times putCar should attempt to retry in case of
 Function. You can also display progress updates by passing in an onStoredChunk callback. This is called after each chunk of data is uploaded, with the size of the chunk in bytes passed in as a parameter. By default, data is split into chunks of around 10MB
   
 
-<img width="630" alt="Screen Shot 2022-11-01 at 6 52 38 PM" src="https://user-images.githubusercontent.com/33232379/199356985-539e3374-cbcf-41e4-890e-76fda3814e49.png">
+<img width="786" alt="Screen Shot 2022-11-01 at 7 04 57 PM" src="https://user-images.githubusercontent.com/33232379/199358759-e634ab4c-7907-4cda-9125-68f42693b1d9.png">
 
 </details>
   
   <details>
 <summary>decoders</summary>
 <br>
-[BlockDecoder](https://github.com/multiformats/js-multiformats#ipld-codecs-multicodec). Used to specify additional IPLD block decoders which interpret the data in the CAR file and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: dag-pb, dag-cbor and raw.
+BlockDecoder: https://github.com/multiformats/js-multiformats#ipld-codecs-multicodec . Used to specify additional IPLD block decoders which interpret the data in the CAR file and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: dag-pb, dag-cbor and raw.
 
 <img width="796" alt="Screen Shot 2022-11-01 at 7 02 22 PM" src="https://user-images.githubusercontent.com/33232379/199358492-02f5d854-ca55-4610-bad6-8590d8b9c081.png">
     
