@@ -21,6 +21,7 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 
 [This document](https://github.com/ipfs/js-ipfs/blob/master/docs/BROWSERS.md) is relevant in that it describes the usage of js ipfs in the browser...
 
+Use [this](https://github.com/DED-EDU/ephemeral-cluster) to test MVP smart contract suite with Ethereum (EVM) as execution layer (Solidity smart contracts)...
 
 
 ### Resources
