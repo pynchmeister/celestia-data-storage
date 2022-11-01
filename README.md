@@ -35,6 +35,8 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 * https://github.com/pynchmeister/celestia-bundlr
 * https://github.com/pynchmeister/celestia-filecoin
 * https://github.com/pynchmeister/web3.storage
+* https://github.com/pynchmeister/celestia-knowledge-transfer
+* 
 
 
 ### Notes / Open Questions
