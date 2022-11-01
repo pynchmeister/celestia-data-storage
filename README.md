@@ -30,10 +30,16 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 * https://github.com/The-Arbiter/Hash-Storage-Example/blob/main/src/HashStore.sol
 
 * https://developer.mozilla.org/en-US/docs/Web/API/File
-* 
+* https://github.com/pynchmeister/celestia-bundlr
+
 
 ### Notes / Open Questions
 
 How do CIDs map to Filecoin's Piece-Inclusion proof?
+
+### TODO
+
+* update google docs with condensed repo(s), updated spec, diagrams, etc.
+* condense repos here
 
 
