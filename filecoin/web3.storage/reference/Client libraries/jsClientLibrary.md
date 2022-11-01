@@ -1,3 +1,9 @@
+# Link(s)
+
+* https://web3.storage/docs/
+* https://web3.storage/account/
+* https://web3.storage/docs/reference/js-client-library/#retrieve-files
+
 ## Store files 
 
 Store files using the ```put()``` method.
@@ -8,7 +14,7 @@ Store files using the ```put()``` method.
 
 ### Examples
 
-https://github.com/pynchmeister/celestia-data-storage/tree/main/filecoin/web3.storage/reference/Client%20libraries
+* https://github.com/pynchmeister/celestia-data-storage/tree/main/filecoin/web3.storage/reference/Client%20libraries
 
 
 #### Return value
@@ -24,6 +30,40 @@ Method parameters are supplied in positional order.
 [This](https://developer.mozilla.org/en-US/docs/Web/API/File) is the Files link from above^^^
 
 An ```{options}``` object has the following properties that can be used as parameters when calling ```put()```:
+
+<details>
+<summary>name</summary>
+<br>
+String. The name parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the file listing on the web3.storage site.
+
+<br>
+
+```const cid = await client.put(files, { name: 'cat pics' });```
+</details>
+
+<details>
+<summary>maxRetries</summary>
+<br>
+Number. You can specify how many times ```put``` should attempt to retry in case of failure by passing in a maxRetries option:
+</details>
+
+<details>
+<summary>wrapWithDirectory</summary>
+<br>
+This is how you dropdown.
+</details>
+
+<details>
+<summary>onRootCidReady</summary>
+<br>
+This is how you dropdown.
+</details>
+
+<details>
+<summary>onStoredChunk</summary>
+<br>
+This is how you dropdown.
+</details>
 
 
 
