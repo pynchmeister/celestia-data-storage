@@ -18,6 +18,7 @@
 * https://spec.filecoin.io
 * https://web3.storage/docs/concepts/decentralized-storage/#filecoin-for-verifiable-content-persistence
 * https://filecoin.io/blog/posts/filecoin-features-verifiable-storage/
+* https://filecoin.io/blog/posts/what-sets-us-apart-filecoin-s-proof-system/
 
 
 <img width="835" alt="Screen Shot 2022-11-01 at 12 28 06 PM" src="https://user-images.githubusercontent.com/33232379/199285481-cf5325ae-f1f9-4af6-96f1-d421eb3423fc.png">
@@ -27,5 +28,7 @@
 * [Content Addressing](https://ipld.io/specs/transport/car/) - ```the technique of issuing each piece of data a content identifier (CID), which is a token derived directly from the file's contents using an algorithm that will always generate the same key for the same content.```
 * Proof-of-Replication - ```proves that a given storage provider is storing a unique copy of a client's original data.```
 * Proof-of-Spacetime - ```proves that the client's data is stored continuously over time.```
-* 
+* Proofs of storage - lorem ipsum...
+* Proofs of space - lorem ipsum...
+* SNARKS - lorem ipsum...
 
