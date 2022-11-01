@@ -15,6 +15,17 @@ https://github.com/pynchmeister/celestia-data-storage/tree/main/filecoin/web3.st
 
 The method returns a string containing the CID of the uploaded CAR.
 
+#### Parameters
+
+Method parameters are supplied in positional order.
+
+<img width="1031" alt="Screen Shot 2022-11-01 at 5 09 44 PM" src="https://user-images.githubusercontent.com/33232379/199342087-d0a04072-da80-4240-9fca-56034d50fb6f.png">
+
+[This](https://developer.mozilla.org/en-US/docs/Web/API/File) is the Files link from above^^^
+
+An ```{options}``` object has the following properties that can be used as parameters when calling ```put()```:
+
+
 
 ## Retrieve Files
 
