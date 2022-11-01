@@ -8,7 +8,6 @@ Store files using the ```put()``` method.
 
 ### Examples
 
-TODO
 
 #### Return value
 
