@@ -243,8 +243,72 @@ The following example stores return values from a call to ```list()``` into a Ja
 
 The ```list()``` method accepts an ```{options}``` object with the following properties:
 
-...
+<details>
+<summary>before</summary>
+<br>
+String. Specifies a date, in ISO 8601 format. Ensures that the call to list() will not return any results newer than the given date.
+<br>
+</details>
 
+<details>
+<summary>maxResults</summary>
+<br>
+Number. Specifies the maximum number of uploads to return when calling list().
+<br>
+</details>
+
+#### Return value
+
+The return value for ```list()``` is an ```AsyncIterable object```, containing objects whose data structure is the same as the return value for ```status()``` but with one extra propery: a string field called ```name``` that corresponds to the value given passed to the ```name``` parameter in the original call to ```put()```. This means that iterating through results from your call to ```list()``` yields objects with the below example structure.
+
+<img width="840" alt="Screen Shot 2022-11-01 at 6 32 19 PM" src="https://user-images.githubusercontent.com/33232379/199354363-aaf22011-dedb-4d51-b41a-d2ba0b6e0c62.png">
+
+### Store CAR files
+
+Store [a CAR file](https://github.com/ipld/js-car) using the putCar() method.
+
+#### Usage 
+
+```<clientObject>.putCar(car, { options })```
+
+#### Examples
+
+```
+import fs from 'fs';
+import { Readable } from 'stream';
+import { CarReader, CarWriter } from '@ipld/car';
+import * as raw from 'multiformats/codecs/raw';
+import { CID } from 'multiformats/cid';
+import { sha256 } from 'multiformats/hashes/sha2';
+
+async function getCar() {
+  const bytes = new TextEncoder().encode('random meaningless bytes');
+  const hash = await sha256.digest(raw.encode(bytes));
+  const cid = CID.create(1, raw.code, hash);
+  // create the writer and set the header with a single root
+  const { writer, out } = await CarWriter.create([cid]);
+  Readable.from(out).pipe(fs.createWriteStream('example.car'));
+  // store a new block, creates a new file entry in the CAR archive
+  await writer.put({ cid, bytes });
+  await writer.close();
+  const inStream = fs.createReadStream('example.car');
+  // read and parse the entire stream in one go, this will cache the contents of
+  // the car in memory so is not suitable for large files.
+  const reader = await CarReader.fromIterable(inStream);
+  return reader;
+}
+
+const car = await getCar();
+const cid = await client.putCar(car);
+```
+
+#### Return value
+
+The method returns a string containing the CID of the uploaded CAR.
+
+<img width="826" alt="Screen Shot 2022-11-01 at 6 35 49 PM" src="https://user-images.githubusercontent.com/33232379/199354853-39aadaf8-8617-4a23-a611-d6e36756f76e.png">
+
+An ```{options}``` object has the following properties that can be used as parameters when calling ```putCar()```:
 
 
 
