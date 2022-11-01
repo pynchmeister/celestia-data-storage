@@ -32,7 +32,7 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 * https://developer.mozilla.org/en-US/docs/Web/API/File
 * https://github.com/pynchmeister/celestia-bundlr
 * https://github.com/pynchmeister/celestia-filecoin
-* 
+* https://github.com/pynchmeister/web3.storage
 
 
 ### Notes / Open Questions
