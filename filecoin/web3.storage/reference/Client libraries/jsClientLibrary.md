@@ -50,7 +50,28 @@ Number. You can specify how many times ```put``` should attempt to retry in case
 <details>
 <summary>wrapWithDirectory</summary>
 <br>
-This is how you dropdown.
+Boolean. The wrapWithDirectory parameter controls whether the files will be wrapped in an IPFS directory when added to web3.storage. With the default value of true, all files provided to the put method will be wrapped in an IPFS directory listing.
+
+For example, when adding a file called hello.txt using the default behavior, the root CID returned by the put method identifies a directory containing a file named hello.txt, rather than the hello.txt file itself, which is accessible at 
+
+<img width="181" alt="Screen Shot 2022-11-01 at 5 40 52 PM" src="https://user-images.githubusercontent.com/33232379/199347047-270d9be3-b693-4710-a54c-866912a55bbb.png">
+
+If you are adding a directory full of files using the put method (currently out of scope of MVP*), you may want to override the default behavior to avoid an extra level of nesting in your IPFS path. For example, if you have a files directory like this:
+
+<img width="545" alt="Screen Shot 2022-11-01 at 5 41 49 PM" src="https://user-images.githubusercontent.com/33232379/199347174-35335d55-f6b8-4fbe-bd66-d897b8cd60f3.png">
+
+Using the default behavior, the put method would return a CID for a directory containing a files subdirectory, like this:
+
+<img width="686" alt="Screen Shot 2022-11-01 at 5 42 50 PM" src="https://user-images.githubusercontent.com/33232379/199347295-5bae42c6-5edb-4799-b0c8-b7dc0d38bb5c.png">
+
+However, if you do this instead:
+
+<img width="655" alt="Screen Shot 2022-11-01 at 5 43 48 PM" src="https://user-images.githubusercontent.com/33232379/199347477-b1357ea0-499b-4717-8b54-ef2b24d0894b.png">
+
+The contents of the files directory will be at the top level, instead of the files directory itself:
+
+<img width="759" alt="Screen Shot 2022-11-01 at 5 44 20 PM" src="https://user-images.githubusercontent.com/33232379/199347567-799be64b-e6ef-468f-8559-d1a73ff34a47.png">
+
 </details>
 
 <details>
