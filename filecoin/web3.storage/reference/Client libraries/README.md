@@ -310,9 +310,72 @@ The method returns a string containing the CID of the uploaded CAR.
 
 An ```{options}``` object has the following properties that can be used as parameters when calling ```putCar()```:
 
+<details>
+<summary>name</summary>
+<br>
+String. The name parameter lets you attach an arbitrary name to the uploaded content archive, which you can use to identify and organize your uploads. The name is not stored alongside the data on IPFS, but it is viewable within the file listing on the web3.storage site.<br>
+  
+<img width="679" alt="Screen Shot 2022-11-01 at 6 51 47 PM" src="https://user-images.githubusercontent.com/33232379/199356866-66b0ae52-5900-4b8f-9363-abee4665232b.png">
+  
+</details>
+  
+<details>
+<summary>maxRetries</summary>
+<br>
+Number. You can specify how many times putCar should attempt to retry in case of failure by passing in a maxRetries option. The default value is 5.
 
+<img width="501" alt="Screen Shot 2022-11-01 at 6 57 53 PM" src="https://user-images.githubusercontent.com/33232379/199357597-1c8cdda7-63cf-4672-a8ff-894af7db6f61.png">
 
+<details>
+<summary>onStoredChunk</summary>
+<br>
+Function. You can also display progress updates by passing in an onStoredChunk callback. This is called after each chunk of data is uploaded, with the size of the chunk in bytes passed in as a parameter. By default, data is split into chunks of around 10MB
+  
 
+<img width="630" alt="Screen Shot 2022-11-01 at 6 52 38 PM" src="https://user-images.githubusercontent.com/33232379/199356985-539e3374-cbcf-41e4-890e-76fda3814e49.png">
 
+</details>
+  
+  <details>
+<summary>decoders</summary>
+<br>
+[BlockDecoder](https://github.com/multiformats/js-multiformats#ipld-codecs-multicodec). Used to specify additional IPLD block decoders which interpret the data in the CAR file and split it into multiple chunks. Note these are only required if the CAR file was not encoded using the default encoders: dag-pb, dag-cbor and raw.
 
+</details>
+```
+  import { Web3Storage } from 'web3.storage'
+import { CarReader, CarWriter } from '@ipld/car'
+import { encode } from 'multiformats/block'
+import * as json from '@ipld/dag-json'
+import { sha256 } from 'multiformats/hashes/sha2'
 
+async function storeDagJSON (jsonObject) {
+  // encode the json object into an IPLD block
+  const block = await encode({ value: jsonObject, codec: json, hasher: sha256 })
+
+  // create a new CarWriter, with the encoded block as the root
+  const { writer, out } = CarWriter.create([block.cid])
+
+  // add the block to the CAR and close it
+  writer.put(block)
+  writer.close()
+
+  // create a new CarReader we can hand to web3.storage.putCar
+  const reader = await CarReader.fromIterable(out)
+
+  // upload to web3.storage using putCar
+  console.log('uploading car.')
+  const client = new Web3Storage({ token: process.env.WEB3STORAGE_TOKEN })
+  const cid = await client.putCar(reader, {
+    name: 'putCar using dag-json',
+
+    // include the dag-json codec in the decoders field
+    decoders: [json]
+  })
+  console.log('Stored dag-json data! CID:', cid)
+}
+
+storeDagJSON({
+  hello: 'world'
+})
+```
