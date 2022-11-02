@@ -90,10 +90,3 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 * Taken together, PoRep and PoSt make up Filecoin’s unique proof system, a combination of Proof of Storage and Proof of Space.
 
 * In addition to its proof system, the Filecoin network also relies on game-theoretic incentives to discourage malicious or negligent activity. All miners that agree to store data on the Filecoin network must provide collateral in the form of Filecoin at the time of agreement. Any storage miner that fails a PoSt check is penalized, and portions of this collateral are lost whenever a penalty is applied. After too many penalties, all the collateral is lost, and a miner is prevented from offering storage again to clients. You can read more about some of these cryptoeconomic mechanisms [here](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/).
-
-### TODO
-
-* update google docs with condensed repo(s), updated spec, diagrams, etc.
-* condense repos here
-* organize by protocol, concept, user story, etc. 
-* follow up with mentors regarding blockers and domain specific questions 
