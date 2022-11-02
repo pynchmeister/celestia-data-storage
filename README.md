@@ -77,7 +77,19 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 
 * That means the Filecoin blockchain itself verifies the acts of storage performed by miners. This is how Filecoin builds trust into the protocol layer of its decentralized network. At its core, Filecoin’s consensus algorithm is powered by two proof mechanisms that together make data storage publicly verifiable on the Filecoin blockchain: Proof-of-Replication and Proof-of-Spacetime.
 
-* 
+* To verify storage on Filecoin’s decentralized network, you need to prove two things. First, you need to prove that the right set of data is stored in a given storage space. Second, you need to prove that the same set of data has been stored continuously over a given period of time.
+
+* Filecoin’s proving algorithms perform these verification tasks. Proof-of-Replication proves that a given miner is storing a physically unique copy of a client’s original data, while Proof-of-Spacetime proves that the client’s data is stored continuously over time. Here’s how both proofs work.
+
+* Proof-of-Replication (PoRep) begins with a process called “sealing.” A miner dedicates a portion of available storage space, called a “sector,” to store a client’s data. Once this sector is filled, it is sealed. Sealing is a set of operations that gradually transforms the sector into a unique replica of the original data. This replica is associated with the Filecoin miner’s public key. To perform the final PoRep, the miner then submits a cryptographic hash of the replica (its CommR) to the public Filecoin blockchain.
+
+* Through PoRep, miners provide public proof that they are storing a unique encoding of a client’s data at the time the proof was performed. Only a miner possessing the original data in its entirety could submit the correct CommR (the on-chain commitment to the replica) to the Filecoin blockchain. But one PoRep alone doesn’t verify that storage is continuous over time.
+
+* That’s where Proofs-of-Spacetime (PoSt) comes in. With PoSt, randomly selected miners are asked to provide PoReps for randomly selected storage sectors that they maintain. This is accomplished via a procedure in which miners are issued a cryptographic challenge that can only be correctly answered by consulting a sealed sector directly. The miner must respond to this challenge within strict time limits. Every miner must prove all of their storage daily, and miners are also randomly selected to prove storage in order to win blocks. And the computational difficulty of sealing ensures that miners must maintain ready access to and integrity of the sealed sector.
+
+* Taken together, PoRep and PoSt make up Filecoin’s unique proof system, a combination of Proof of Storage and Proof of Space.
+
+* In addition to its proof system, the Filecoin network also relies on game-theoretic incentives to discourage malicious or negligent activity. All miners that agree to store data on the Filecoin network must provide collateral in the form of Filecoin at the time of agreement. Any storage miner that fails a PoSt check is penalized, and portions of this collateral are lost whenever a penalty is applied. After too many penalties, all the collateral is lost, and a miner is prevented from offering storage again to clients. You can read more about some of these cryptoeconomic mechanisms [here](https://filecoin.io/blog/filecoin-cryptoeconomic-constructions/).
 
 ### TODO
 
