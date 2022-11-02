@@ -28,6 +28,9 @@
 * [Content Addressing](https://ipld.io/specs/transport/car/) - ```the technique of issuing each piece of data a content identifier (CID), which is a token derived directly from the file's contents using an algorithm that will always generate the same key for the same content.```
 * Proof-of-Replication - ```proves that a given storage provider is storing a unique copy of a client's original data.```
 * Proof-of-Spacetime - ```proves that the client's data is stored continuously over time.```
+
+<img width="737" alt="Screen Shot 2022-11-01 at 8 58 53 PM" src="https://user-images.githubusercontent.com/33232379/199369992-d5df73ee-777c-4f7f-ac73-d6a008b0d5a4.png">
+
 * Proofs of storage - lorem ipsum...
 * Proofs of space - lorem ipsum...
 * SNARKS - lorem ipsum...
