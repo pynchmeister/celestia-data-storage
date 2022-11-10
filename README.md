@@ -40,7 +40,8 @@ The [IPFS Files API](https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/F
 * https://filecoin.io/blog/posts/what-sets-us-apart-filecoin-s-proof-system/
 * https://filecoin.io/blog/posts/filecoin-features-verifiable-storage/
 * https://github.com/celestiaorg/celestia-core/blob/v0.34.x-celestia/docs/celestia-architecture/adr-001-block-propagation.md
-*
+* https://github.com/celestiaorg/celestia-core/blob/v0.34.x-celestia/docs/celestia-architecture/adr-002-ipld-da-sampling.md
+* 
 
 
 ### Open Questions
